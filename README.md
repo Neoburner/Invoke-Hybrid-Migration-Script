@@ -1,4 +1,4 @@
-# Invoke-Hybrid-Migration-Script
+## Invoke-Hybrid-Migration-Script
 
 This is a basic script to enable the flow of a Hybrid migration scenerio in Skype for Business
 
@@ -6,7 +6,7 @@ It works, but needs to be tweaked and cleaned up, which will come in due course,
 
 Current version: 0.5
 
-Change Notes: 
+## Change Notes: 
 
 30/05/2017 - Basic Script  Created and Tested 
 31/05/2017 - Added formatting, IF block for RG users 
@@ -15,9 +15,10 @@ Change Notes:
 07/07/2017 - Added Online User Validation 
 
 
-Requirements: 
-Lync Powershell Module 
-LyncOnlineConnector Module 
-Windows Azure AD Module 
-Licences Assigned E3 / CPBX 
+## Requirements: 
+
+1. Lync Powershell Module 
+2. LyncOnlineConnector Module 
+3. Windows Azure AD Module 
+4. Licences Assigned E3 / CPBX 
 
