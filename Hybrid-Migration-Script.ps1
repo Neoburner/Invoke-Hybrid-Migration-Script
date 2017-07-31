@@ -1,5 +1,5 @@
 ###########################
-# Current version: 0.5
+# Current version: 0.6
 #
 # Change Notes:
 # 30/05/2017 - Basic Script  Created and Tested
@@ -7,6 +7,7 @@
 # 22/06/2017 - Added Hosted Voicemail Policy Assignment
 # 23/06/2017 - Added voicemail if loop
 # 07/07/2017 - Added Online User Validation
+# 31/07/2017 - Added Client Policy Selection
 
 ###########################
 # Requirements:
@@ -25,6 +26,7 @@ $targetFrontend = "XX"
 $O365OverrideURL = "XX" # https://technet.microsoft.com/en-us/library/dn689115.aspx / To determine the Hosted Migration Service URL for your Office 365 tenant
 $O365Username = "XX"
 $hostedVoicemailPolicy = "XX"
+$clientPolicy = "XX"
 
 # DO NOT EDIT BELOW
 
@@ -149,6 +151,8 @@ Function Invoke-EVEnable () {
             $Enable = Grant-CsVoiceRoutingPolicy -Identity $sipAddress -PolicyName $onlineVoicePolicy
             Write-Host -ForegroundColor Cyan -BackgroundColor Red  "Setting Hosted Voicemail Policy"
             $Enable = Grant-CsHostedVoicemailPolicy -Identity $sipAddress -PolicyName $hostedVoicemailPolicy
+            Write-Host -ForegroundColor Cyan -BackgroundColor Red  "Setting Client Policy"
+            $Enable = Grant-CsClientPolicy -Identity $sipAddress -PolicyName $clientPolicy
 
             If (!$rg) {
                 Write-Host -ForegroundColor Cyan -BackgroundColor Red  "No response group assigned for user" $sipAddress
